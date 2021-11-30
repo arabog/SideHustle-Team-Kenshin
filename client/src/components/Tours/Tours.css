@@ -1,0 +1,158 @@
+main, .card, .card::before, .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.card {
+    width: 90%;
+    height: 50vh;
+    background: var(--clr-black);
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    justify-content: center;
+    content: "TEAM KENSHIN";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--clr-white);
+    color: var(--clr-primary-5);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 25%;
+    opacity: 1;
+    transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.card .title , .card .content{
+    color: var(--clr-primary-2);
+}
+
+.info {
+    width: 80%;
+    height: fit-content;
+    background: var(--clr-white);
+    color: var(--clr-primary-1);
+    text-align: center;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    padding: 10px 20px;
+}
+
+.info .price {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.price p, .price button {
+  width: 40%;
+  display: block;
+}
+
+.price p {
+    font-size: 1.5rem;
+    color: var(--clr-primary-5);
+}
+
+.price button {
+    height: 100%;
+    background: var(--clr-primary-5);
+    color: var(--clr-white);
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.price button:hover {
+    animation: shake 4s infinite;
+}
+
+@keyframes shake {
+    5%, 50% {transform: scale(1);}
+  
+    10% {transform: scale(0.9);}
+  
+    15% {transform: scale(1.15);}
+  
+    20% {transform: scale(1.15) rotate(-5deg);}
+  
+    25% {transform: scale(1.15) rotate(5deg);}
+  
+    30% {transform: scale(1.15) rotate(-3deg);}
+  
+    35% {transform: scale(1.15) rotate(2deg);}
+  
+    40% {transform: scale(1.15) rotate(0);}
+}
+
+.card:hover img {
+    opacity: 1;
+    transform: scale(1.2)
+}
+
+.card:hover .info{
+    transform: translateY(-100%);
+    opacity: 1;
+}
+
+.card:hover:before {
+    transform: scale(1.5);
+}
+
+@media screen and (max-width: 670px) {
+    main {
+        padding: 0;
+    }
+    
+    .card {
+        height: 35vh;
+    }
+
+    .card::before {
+        width: 100px;
+        height: 100px;
+        font-size: 0.8rem;
+    }
+
+    .card .title {
+        font-size: 1rem;
+    }
+
+    .card .content {
+        font-size: 0.7rem;
+    }
+
+    .info {
+        width: 95%;
+    }
+
+    .info .price {
+        height: 30px;
+    }
+
+    .price button {
+        font-size: 0.9rem;
+    }
+}
