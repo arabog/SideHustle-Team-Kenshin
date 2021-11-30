@@ -3,12 +3,11 @@ import "./Loading.css"
 
 const Loading = () => {
 
-
-          return (
-                    <div>
-                              Loading page
-                    </div>
-          )
+    return (
+        <div>
+            Loading page
+        </div>
+    )
 }
 
 
