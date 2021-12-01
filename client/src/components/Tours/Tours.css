@@ -10,8 +10,8 @@ main {
 }
 
 .card {
-    width: 90%;
-    height: 50vh;
+    width: 85%;
+    height: 60vh;
     background: var(--clr-black);
     margin: 30px 0;
     position: relative;
@@ -28,7 +28,7 @@ main {
     color: var(--clr-primary-5);
     font-size: 1.5rem;
     position: absolute;
-    top: 25%;
+    top: 30%;
     opacity: 1;
     transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -71,7 +71,7 @@ main {
 }
 
 .price p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--clr-primary-5);
 }
 
@@ -121,7 +121,7 @@ main {
     transform: scale(1.5);
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 960px) {
     main {
         padding: 0;
     }

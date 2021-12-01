@@ -1,4 +1,3 @@
-// import Loading from '../Loading/Loading';
 import Tours from '../Tours/Tours';
 
 // api
@@ -8,7 +7,6 @@ function App() {
 
     return (
         <>
-            {/* <Loading /> */}
             <Tours data={url} />
         </>
     )
