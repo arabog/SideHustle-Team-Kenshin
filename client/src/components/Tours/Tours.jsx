@@ -1,6 +1,20 @@
+import { useEffect, useState } from 'react';
 import './Tours.css'
 
+const url = "https://course-api.com/react-tours-project";
 const Tours = () => {
+
+    const [tours, setTours] = useState([]);
+
+    const fetchTours = async () => {
+            const requestTours = await fetch(url);
+            const resp = await requestTours.json();
+            setTours(resp);
+    }
+
+    useEffect(()=>{
+        fetchTours();
+    }, []);
     return (
         <main>
             <div className="card">
@@ -16,6 +30,30 @@ const Tours = () => {
                 </div>
                 </div>
             </div>
+
+            
+                {tours.map((tour) => {
+
+                    const {id,name,info,image,price} = tour;
+                    return(
+                            <div className="card" key={id}>
+                            <img src={image} alt={name} />
+                            <div className="info">
+                            <h1 className='title'>{name}</h1>
+                            <p className='content'>
+                                {info}
+                            </p>
+                            <div className='price'>
+                                <p>{price}</p>
+                                <button>Check In</button>
+                            </div>
+                            </div>
+                            </div>
+                    )
+                })}
+                
+    
+
         </main>
     )
 }
