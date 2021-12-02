@@ -1,3 +1,5 @@
+https://sidehustle-team-kenshin.netlify.app/
+
 # SIDEHUSTLE-TEAM-KENSHIN
 
 This is the SideHustle Second Capstone project of 
@@ -26,3 +28,21 @@ Building
 
 yarn build
 
+
+
+Before starting/updating your project
+run 
+git remote add upstream https://github.com/arabog/SideHustle-Team-Kenshin.git
+
+git pull upstream main
+
+
+And when you are done with your modification/addition run
+git add .
+git commit -m "commit message"
+
+then pull again: git pull upstream main
+
+then push to your own branch not main branch
+
+git push origin yourBranchName
